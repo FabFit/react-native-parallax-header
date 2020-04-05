@@ -1,6 +1,7 @@
 {
   "name": "@fabfit/react-native-parallax-header",
   "version": "0.1.0",
+  "private": false,
   "description": "Animated parallax headers for React Native",
   "main": "lib/commonjs/index.js",
   "module": "lib/module/index.js",
