@@ -8,8 +8,8 @@ export default function ImageWithOverlayScreen() {
     <ParallaxHeader
       maxHeight={300}
       minHeight={100}
-      heroImageUrl="https://source.unsplash.com/user/erondu/600x300"
-      renderOverlay={({ scrollDistance, scrollPositionY }) => (
+      heroImage={{ uri: 'https://source.unsplash.com/user/erondu/600x300' }}
+      renderOverlay={() => (
         <View
           style={{
             position: 'absolute',

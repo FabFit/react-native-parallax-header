@@ -7,7 +7,7 @@ export default function ImageScreen() {
     <ParallaxHeader
       maxHeight={300}
       minHeight={100}
-      heroImageUrl="https://source.unsplash.com/user/erondu/600x300"
+      heroImage={{ uri: 'https://source.unsplash.com/user/erondu/600x300' }}
     >
       <Content title="This is an example of a ParallaxHeader with a standard image" />
     </ParallaxHeader>

@@ -8,7 +8,7 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
   children,
   renderOverlay,
   renderHeader,
-  heroImageUrl,
+  heroImage,
 }) => {
   const scrollPositionY = new Animated.Value(0);
 
@@ -59,7 +59,7 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
           { transform: [{ translateY: headerTranslate }] },
         ]}
       >
-        {!!heroImageUrl && (
+        {!!heroImage && (
           <>
             <Animated.Image
               style={[
@@ -70,9 +70,7 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
                   transform: [{ translateY: imageTranslate }],
                 },
               ]}
-              source={{
-                uri: heroImageUrl,
-              }}
+              source={heroImage}
             />
             {/* <Overlay /> */}
           </>
