@@ -1,6 +1,17 @@
-# React Native Parallax Header
+<div align="center">
+<h1>React Native Parallax Header</h1>
+<img style="padding-right: 10px" src="https://img.shields.io/npm/v/@fabfit/react-native-parallax-header?style=flat-square" />
+<img src="https://img.shields.io/bundlephobia/min/@fabfit/react-native-parallax-header?style=flat-square" />
 
 Animated parallax headers for React Native as seen in our FabFit Studio App.
+
+</div>
+
+---
+
+This component currently only supports **iOS**. It has not been tested in a production environment on Android.
+
+<!-- ![](https://files-jamiehalvorson.fabfit1.now.sh/parallax-one.gif) -->
 
 ## Installation
 
@@ -19,13 +30,15 @@ yard add @fabfit/react-native-parallax-header
 ```tsx
 import ParallaxHeader from '@fabfit/react-native-parallax-header';
 
-<ParallaxHeader
-  maxHeight={300}
-  minHeight={100}
-  heroImage={{ uri: 'https://source.unsplash.com/user/erondu/600x300' }}
->
-  <Text>All children will render below the parallax header</Text>
-</ParallaxHeader>;
+const MyScreen = () => (
+  <ParallaxHeader
+    maxHeight={300}
+    minHeight={100}
+    heroImage={{ uri: 'https://source.unsplash.com/user/erondu/600x300' }}
+  >
+    <Text>All children will render below the parallax header</Text>
+  </ParallaxHeader>
+);
 ```
 
 ## Props
@@ -46,3 +59,7 @@ There are a number of examples that can be found in the `/examples` directory. I
 1. checkout this repository
 2. run `yarn ; yarn bootstrap` in the root
 3. run `yarn example:ios` which will run the example directory in a simulator
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/) © [FabFit](https://fab.fitness)
