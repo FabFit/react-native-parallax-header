@@ -1,6 +1,19 @@
 # React Native Parallax Header
 
+<div style="display: flex">
+<div style="flex: 1; padding-right: 30px">
 Animated parallax headers for React Native as seen in our FabFit Studio App.
+
+This app has been tried and tested on iOS in production, however, it has not been tested in Android and is therefore not production ready for Android applications.
+
+We will be launching our Android app shortly and will conduct full testing then.
+
+</div>
+<div style="flex: 1">
+<img src="https://files-jamiehalvorson.fabfit1.now.sh/parallax-one.gif" alt="Example of parallax header" />
+`/example/src/screens/image.tsx`
+</div>
+</div>
 
 ## Installation
 
@@ -19,13 +32,15 @@ yard add @fabfit/react-native-parallax-header
 ```tsx
 import ParallaxHeader from '@fabfit/react-native-parallax-header';
 
-<ParallaxHeader
-  maxHeight={300}
-  minHeight={100}
-  heroImage={{ uri: 'https://source.unsplash.com/user/erondu/600x300' }}
->
-  <Text>All children will render below the parallax header</Text>
-</ParallaxHeader>;
+const MyScreen = () => (
+  <ParallaxHeader
+    maxHeight={300}
+    minHeight={100}
+    heroImage={{ uri: 'https://source.unsplash.com/user/erondu/600x300' }}
+  >
+    <Text>All children will render below the parallax header</Text>
+  </ParallaxHeader>
+);
 ```
 
 ## Props
