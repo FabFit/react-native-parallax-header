@@ -1,19 +1,17 @@
-# React Native Parallax Header
+<div align="center">
+<h1>React Native Parallax Header</h1>
+<img style="padding-right: 10px" src="https://img.shields.io/npm/v/@fabfit/react-native-parallax-header?style=flat-square" />
+<img src="https://img.shields.io/bundlephobia/min/@fabfit/react-native-parallax-header?style=flat-square" />
 
-<div style="display: flex">
-<div style="flex: 1; padding-right: 30px">
 Animated parallax headers for React Native as seen in our FabFit Studio App.
 
-This app has been tried and tested on iOS in production, however, it has not been tested in Android and is therefore not production ready for Android applications.
+</div>
 
-We will be launching our Android app shortly and will conduct full testing then.
+---
 
-</div>
-<div style="flex: 1">
-<img src="https://files-jamiehalvorson.fabfit1.now.sh/parallax-one.gif" alt="Example of parallax header" />
-`/example/src/screens/image.tsx`
-</div>
-</div>
+This component currently only supports **iOS**. It has not been tested in a production environment on Android.
+
+<!-- ![](https://files-jamiehalvorson.fabfit1.now.sh/parallax-one.gif) -->
 
 ## Installation
 
@@ -61,3 +59,7 @@ There are a number of examples that can be found in the `/examples` directory. I
 1. checkout this repository
 2. run `yarn ; yarn bootstrap` in the root
 3. run `yarn example:ios` which will run the example directory in a simulator
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/) © [FabFit](https://fab.fitness)
