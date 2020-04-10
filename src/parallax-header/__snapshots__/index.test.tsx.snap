@@ -1,0 +1,182 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`[custom height] ParallaxHeader matches the snapshot 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <ScrollView
+      scrollEventThrottle={1}
+      showsVerticalScrollIndicator={false}
+    >
+      <View
+        style={
+          Object {
+            "marginTop": 700,
+          }
+        }
+      />
+    </ScrollView>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(45, 51, 59, 1)",
+          "height": 700,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "transform": Array [
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`[default] ParallaxHeader matches the snapshot 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <ScrollView
+      scrollEventThrottle={1}
+      showsVerticalScrollIndicator={false}
+    >
+      <View
+        style={
+          Object {
+            "marginTop": 550,
+          }
+        }
+      />
+    </ScrollView>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(45, 51, 59, 1)",
+          "height": 550,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "transform": Array [
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    />
+  </View>
+</View>
+`;
+
+exports[`[heroImage] ParallaxHeader matches the snapshot 1`] = `
+<View
+  pointerEvents="box-none"
+  style={
+    Object {
+      "flex": 1,
+    }
+  }
+>
+  <View
+    collapsable={true}
+    pointerEvents="box-none"
+    style={
+      Object {
+        "flex": 1,
+      }
+    }
+  >
+    <ScrollView
+      scrollEventThrottle={1}
+      showsVerticalScrollIndicator={false}
+    >
+      <View
+        style={
+          Object {
+            "marginTop": 550,
+          }
+        }
+      />
+    </ScrollView>
+    <View
+      style={
+        Object {
+          "backgroundColor": "rgba(45, 51, 59, 1)",
+          "height": 550,
+          "left": 0,
+          "overflow": "hidden",
+          "position": "absolute",
+          "right": 0,
+          "top": 0,
+          "transform": Array [
+            Object {
+              "translateY": 0,
+            },
+          ],
+        }
+      }
+    >
+      <Image
+        source={
+          Object {
+            "uri": "https://source.unsplash.com/300x500/?pilates,yoga",
+          }
+        }
+        style={
+          Object {
+            "height": 550,
+            "left": 0,
+            "opacity": 1,
+            "position": "absolute",
+            "resizeMode": "cover",
+            "right": 0,
+            "top": 0,
+            "transform": Array [
+              Object {
+                "translateY": 0,
+              },
+            ],
+          }
+        }
+        testID="hero-image"
+      />
+    </View>
+  </View>
+</View>
+`;

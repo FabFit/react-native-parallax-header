@@ -10,11 +10,18 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
   renderHeader,
   heroImage,
 }) => {
-  const scrollPositionY = new Animated.Value(0);
+  const scrollPositionY = React.useMemo(() => new Animated.Value(0), []);
 
-  const HEADER_MAX_HEIGHT = maxHeight ? maxHeight : 550;
-  const HEADER_MIN_HEIGHT = minHeight ? minHeight : 170;
-  const HEADER_SCROLL_DISTANCE = HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT;
+  const HEADER_MAX_HEIGHT = React.useMemo(() => (maxHeight ? maxHeight : 550), [
+    maxHeight,
+  ]);
+  const HEADER_MIN_HEIGHT = React.useMemo(() => (minHeight ? minHeight : 170), [
+    minHeight,
+  ]);
+  const HEADER_SCROLL_DISTANCE = React.useMemo(
+    () => HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT,
+    [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT]
+  );
 
   const headerTranslate = scrollPositionY.interpolate({
     inputRange: [0, HEADER_SCROLL_DISTANCE],
@@ -35,7 +42,7 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
   });
 
   return (
-    <View>
+    <>
       <Animated.ScrollView
         scrollEventThrottle={1}
         showsVerticalScrollIndicator={false}
@@ -71,6 +78,7 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
                 },
               ]}
               source={heroImage}
+              testID="hero-image"
             />
             {/* <Overlay /> */}
           </>
@@ -82,7 +90,7 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
         scrollDistance: HEADER_SCROLL_DISTANCE,
         maxHeight: HEADER_MAX_HEIGHT,
       })}
-    </View>
+    </>
   );
 };
 
