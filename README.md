@@ -11,9 +11,9 @@ Animated parallax headers for React Native as seen in our FabFit Studio App.
 
 This component currently only supports **iOS**. It has not been tested in a production environment on Android.
 
-| Basic example (`examples/src/screens/image`)                                                                | Overlay example (FabFit Studio iOS App)                                                                      |
-| ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------ |
-| <img src="https://fabfit-github.now.sh/parallax/parallax-one.gif" width="250px" style="max-width: 250px" /> | <img src="https://fabfit-github.now.sh/parallax/parallax-two.gif" width="250px" style="max-width: 250px"  /> |
+| Basic example (`examples/src/screens/image`)                                                                      | Overlay example (FabFit Studio iOS App)                                                                            |
+| ----------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------ |
+| <img src="https://fabfit-github.now.sh/parallax/parallax-one-optim.gif" width="250px" style="max-width: 250px" /> | <img src="https://fabfit-github.now.sh/parallax/parallax-two-optim.gif" width="250px" style="max-width: 250px"  /> |
 
 ## Installation
 
