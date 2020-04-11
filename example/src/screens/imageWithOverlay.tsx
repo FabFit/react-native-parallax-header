@@ -12,11 +12,6 @@ export default function ImageWithOverlayScreen() {
       renderOverlay={() => (
         <View
           style={{
-            position: 'absolute',
-            top: 0,
-            left: 0,
-            right: 0,
-            height: 300,
             justifyContent: 'center',
             alignItems: 'center',
           }}

@@ -2,9 +2,9 @@ import { ReactElement } from 'react';
 import { ImageSourcePropType } from 'react-native';
 
 export interface RenderOverlayParameters {
-  scrollPositionY: any;
-  scrollDistance: number;
-  maxHeight: number;
+  scrollPositionY?: any;
+  scrollDistance?: number;
+  maxHeight?: number;
 }
 
 export interface IParallaxHeaderProps {

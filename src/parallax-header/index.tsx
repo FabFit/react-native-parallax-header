@@ -10,14 +10,15 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
   renderHeader,
   heroImage,
 }) => {
-  const scrollPositionY = React.useMemo(() => new Animated.Value(0), []);
-
   const HEADER_MAX_HEIGHT = React.useMemo(() => (maxHeight ? maxHeight : 550), [
     maxHeight,
   ]);
   const HEADER_MIN_HEIGHT = React.useMemo(() => (minHeight ? minHeight : 170), [
     minHeight,
   ]);
+
+  const scrollPositionY = React.useMemo(() => new Animated.Value(0), []);
+
   const HEADER_SCROLL_DISTANCE = React.useMemo(
     () => HEADER_MAX_HEIGHT - HEADER_MIN_HEIGHT,
     [HEADER_MAX_HEIGHT, HEADER_MIN_HEIGHT]
@@ -49,7 +50,9 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
         onScroll={Animated.event(
           [
             {
-              nativeEvent: { contentOffset: { y: scrollPositionY } },
+              nativeEvent: {
+                contentOffset: { y: scrollPositionY },
+              },
             },
           ],
           {
@@ -57,7 +60,13 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
           }
         )}
       >
-        <View style={{ marginTop: HEADER_MAX_HEIGHT }}>{children}</View>
+        <View
+          style={{
+            marginTop: HEADER_MAX_HEIGHT,
+          }}
+        >
+          {children}
+        </View>
       </Animated.ScrollView>
       <Animated.View
         style={[
@@ -66,7 +75,7 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
           { transform: [{ translateY: headerTranslate }] },
         ]}
       >
-        {!!heroImage && (
+        {!!heroImage && !renderHeader && (
           <>
             <Animated.Image
               style={[
@@ -83,13 +92,56 @@ const ParallaxHeader: React.FunctionComponent<IParallaxHeaderProps> = ({
             {/* <Overlay /> */}
           </>
         )}
-        {renderHeader?.()}
+        {renderHeader && (
+          <Animated.View
+            style={[
+              styles.backgroundImage,
+              {
+                opacity: imageOpacity,
+                height: HEADER_MAX_HEIGHT,
+                transform: [{ translateY: imageTranslate }],
+              },
+            ]}
+          >
+            {React.cloneElement(renderHeader(), {
+              style: {
+                ...StyleSheet.absoluteFillObject,
+                height: HEADER_MAX_HEIGHT,
+              },
+            })}
+          </Animated.View>
+        )}
       </Animated.View>
-      {renderOverlay?.({
-        scrollPositionY,
-        scrollDistance: HEADER_SCROLL_DISTANCE,
-        maxHeight: HEADER_MAX_HEIGHT,
-      })}
+      {renderOverlay && (
+        <>
+          {React.cloneElement(
+            renderOverlay({
+              scrollPositionY,
+              scrollDistance: HEADER_SCROLL_DISTANCE,
+              maxHeight: HEADER_MAX_HEIGHT,
+            }),
+            {
+              style: {
+                ...StyleSheet.absoluteFillObject,
+                height: HEADER_MAX_HEIGHT,
+                ...renderOverlay({}).props.style,
+              },
+            }
+          )}
+        </>
+      )}
+      {/* <Animated.View
+        style={[
+          {
+            height: HEADER_MAX_HEIGHT,
+            backgroundColor: '#fff',
+            ...StyleSheet.absoluteFillObject,
+            top: HEADER_MAX_HEIGHT,
+            zIndex: 99,
+          },
+          { transform: [{ translateY: headerTranslate }] },
+        ]}
+      /> */}
     </>
   );
 };
