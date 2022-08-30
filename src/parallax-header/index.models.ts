@@ -8,9 +8,11 @@ export interface RenderOverlayParameters {
 }
 
 export interface IParallaxHeaderProps {
+  children?: ReactElement;
   maxHeight?: number;
   minHeight?: number;
   heroImage?: ImageSourcePropType;
+  showsVerticalScrollIndicator?: boolean;
   renderOverlay?: ({
     scrollPositionY,
     scrollDistance,
